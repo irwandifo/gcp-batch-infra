@@ -17,9 +17,5 @@ sudo apt-get update
 # Install the Docker packages:
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-# Download the Docker Compose file:
-curl -o docker-compose.yml \
-https://raw.githubusercontent.com/irwandifo/kestra/docker-compose.yml
-
 # Launch Kestra
 docker compose up -d
