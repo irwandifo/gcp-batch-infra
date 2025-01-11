@@ -1,8 +1,4 @@
 terraform {
-  backend "gcs" {
-    bucket = "project-k-tfstate"
-    prefix = "terraform/state"
-  }
   required_providers {
     google = {
       source  = "hashicorp/google"
@@ -16,20 +12,27 @@ provider "google" {
   region  = var.region
 }
 
+module "service_account" {
+  source = "./modules/service_account"
+
+  project_id           = var.project_id
+  service_account_name = var.service_account_name
+}
+
 module "storage" {
   source = "./modules/storage"
 
-  bucket_name = var.lakehouse
-  project_id  = var.project_id
-  region      = var.region
+  bucket_name    = var.bucket_name
+  project_id     = var.project_id
+  region         = var.region
+  lake_zone_list = var.gcs_lake_zone_list
 }
 
 module "vpc" {
   source = "./modules/vpc"
 
-  vpc_name    = var.vpc_name
-  subnet_name = var.subnet_name
-  region      = var.region
+  project_id = var.project_id
+  region     = var.region
 }
 
 module "sql" {
@@ -41,6 +44,7 @@ module "sql" {
   machine_type  = var.cloud_sql_machine
   disk_size     = var.cloud_sql_disk
   vpc_id        = module.vpc.vpc_id
+  database_name = var.pg_database_name
 }
 
 module "compute" {
@@ -50,6 +54,14 @@ module "compute" {
   zone             = var.zone
   machine_type     = var.vm_machine
   disk_size        = var.vm_disk
-  service_account  = var.service_account
+  service_account  = module.service_account.service_account_email
   subnet_self_link = module.vpc.subnet_self_link
+}
+
+module "bigquery" {
+  source = "./modules/bigquery"
+
+  bigquery_dataset_list = var.bigquery_dataset_list
+  project_id            = var.project_id
+  region                = var.region
 }

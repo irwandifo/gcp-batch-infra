@@ -1,7 +1,5 @@
 # Setting private IP for Cloud SQL
 resource "google_compute_global_address" "private_ip_address" {
-  provider = google-beta
-
   name          = "private-ip-address"
   project       = var.project_id
   purpose       = "VPC_PEERING"
@@ -11,8 +9,6 @@ resource "google_compute_global_address" "private_ip_address" {
 }
 
 resource "google_service_networking_connection" "private_vpc_connection" {
-  provider = google-beta
-
   network                 = var.vpc_id
   service                 = "servicenetworking.googleapis.com"
   reserved_peering_ranges = [google_compute_global_address.private_ip_address.name]
@@ -38,4 +34,9 @@ resource "google_sql_database_instance" "postgresql" {
   }
 
   deletion_protection = false
+}
+
+resource "google_sql_database" "postgresql" {
+  name     = var.database_name
+  instance = google_sql_database_instance.postgresql.name
 }

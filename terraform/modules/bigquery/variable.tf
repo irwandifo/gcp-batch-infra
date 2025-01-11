@@ -8,3 +8,8 @@ variable "region" {
   description = "GCP region."
   type        = string
 }
+
+variable "bigquery_dataset_list" {
+  description = "List of BigQuery datasets."
+  type        = list(string)
+}

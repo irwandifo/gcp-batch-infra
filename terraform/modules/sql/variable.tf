@@ -34,3 +34,8 @@ variable "vpc_id" {
   description = "VPC network id."
   type        = string
 }
+
+variable "database_name" {
+  description = "PostgreSQL database name."
+  type        = string
+}

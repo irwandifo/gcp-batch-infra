@@ -2,5 +2,7 @@ dev
 
 # terraform
 .terraform
-*.terraform.lock.hcl
+.terraform.lock.hcl
 terraform.tfvars
+*.tfstate
+tfplan

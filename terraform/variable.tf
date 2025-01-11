@@ -17,31 +17,23 @@ variable "zone" {
   type        = string
 }
 
-variable "service_account" {
+variable "service_account_name" {
   sensitive   = true
-  description = "GCP service account."
+  description = "GCP service account name."
   type        = string
 }
 
 # --------------------------------------------------
 # GCS Variables
 # --------------------------------------------------
-variable "lakehouse" {
+variable "bucket_name" {
   description = "GCS bucket name for data lakehouse."
   type        = string
 }
 
-# --------------------------------------------------
-# VPC Variables
-# --------------------------------------------------
-variable "vpc_name" {
-  description = "VPC name."
-  type        = string
-}
-
-variable "subnet_name" {
-  description = "Subnet name."
-  type        = string
+variable "gcs_lake_zone_list" {
+  description = "List of GCS data lake zone."
+  type        = list(string)
 }
 
 # --------------------------------------------------
@@ -62,6 +54,11 @@ variable "cloud_sql_disk" {
   type        = number
 }
 
+variable "pg_database_name" {
+  description = "PostgreSQL database name."
+  type        = string
+}
+
 # --------------------------------------------------
 # Compute Engine Variables
 # --------------------------------------------------
@@ -78,4 +75,12 @@ variable "vm_machine" {
 variable "vm_disk" {
   description = "Compute Engine instance disk size."
   type        = number
+}
+
+# --------------------------------------------------
+# BigQuery Variables
+# --------------------------------------------------
+variable "bigquery_dataset_list" {
+  description = "List of BigQuery datasets."
+  type        = list(string)
 }

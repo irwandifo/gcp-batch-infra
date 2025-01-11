@@ -1,12 +1,12 @@
 # Create a VPC network
 resource "google_compute_network" "vpc" {
-  name                    = var.vpc_name
+  name                    = "${var.project_id}-vpc"
   auto_create_subnetworks = false
 }
 
 # Create a Subnet
 resource "google_compute_subnetwork" "subnet" {
-  name          = var.subnet_name
+  name          = "${var.project_id}-subnet"
   ip_cidr_range = "10.2.0.0/16"
   network       = google_compute_network.vpc.id
   region        = var.region
@@ -32,7 +32,7 @@ resource "google_compute_firewall" "allow_https" {
 
   allow {
     protocol = "tcp"
-    ports    = ["8080","22"]
+    ports    = ["8080", "22"]
   }
 
   source_ranges = ["0.0.0.0/0"]

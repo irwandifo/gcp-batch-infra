@@ -1,21 +1,16 @@
 # --------------------------------------------------
 # GCP Config
 # --------------------------------------------------
-project_id      = "gcp-project-id"
-region          = "gcp-region"
-zone            = "gcp-zone"
-service_account = "service_account@gcp-project-id.iam.gserviceaccount.com"
+project_id           = "gcp-project-id"
+region               = "gcp-region"
+zone                 = "gcp-zone"
+service_account_name = "service_account"
 
 # --------------------------------------------------
 # GCS Config
 # --------------------------------------------------
-lakehouse = "gcs-bucket-name"
-
-# --------------------------------------------------
-# VPC Config
-# --------------------------------------------------
-vpc_name    = "vpc-name"
-subnet_name = "subnet-name"
+bucket_name        = "gcs-bucket-name"
+gcs_lake_zone_list = ["bronze/dataset", "silver/dataset"]
 
 # --------------------------------------------------
 # Cloud SQL Config
@@ -23,6 +18,7 @@ subnet_name = "subnet-name"
 cloud_sql_name    = "cloud-sql-instance-name"
 cloud_sql_machine = "cloud-sql-instance-machine"
 cloud_sql_disk    = 15 #GB
+pg_database_name  = "database_name"
 
 # --------------------------------------------------
 # Compute Engine Config
@@ -30,3 +26,8 @@ cloud_sql_disk    = 15 #GB
 vm_name    = "compute-engine-name"
 vm_machine = "compute-engine-machine"
 vm_disk    = 15 #GB
+
+# --------------------------------------------------
+# BigQuery Config
+# --------------------------------------------------
+bigquery_dataset_list = ["dataset_silver", "dataset_gold"]

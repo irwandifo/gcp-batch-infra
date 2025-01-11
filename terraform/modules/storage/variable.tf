@@ -20,8 +20,13 @@ variable "storage_class" {
   default     = "STANDARD"
 }
 
+variable "lake_zone_list" {
+  description = "List of GCS data lake zone."
+  type        = list(string)
+}
+
 variable "labels" {
   description = "Key/value label pairs."
   type        = map(string)
-  default     = {"infra":"lakehouse"}
+  default     = { "infra" : "lakehouse" }
 }

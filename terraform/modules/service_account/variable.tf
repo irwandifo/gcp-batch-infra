@@ -4,7 +4,8 @@ variable "project_id" {
   type        = string
 }
 
-variable "region" {
-  description = "GCP region."
+variable "service_account_name" {
+  sensitive   = true
+  description = "GCP service account name."
   type        = string
 }

@@ -16,9 +16,9 @@ resource "google_storage_bucket" "lakehouse" {
 
 # Create GCS bucket object
 resource "google_storage_bucket_object" "zone" {
-  for_each = toset(["bronze", "silver"])
+  for_each = toset(var.lake_zone_list)
 
-  name   = "${each.key}/"
+  name    = "${each.key}/"
   content = " "
-  bucket = google_storage_bucket.lakehouse.name
+  bucket  = google_storage_bucket.lakehouse.name
 }
