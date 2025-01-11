@@ -17,10 +17,11 @@ sudo apt-get update
 # Install the Docker packages:
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
+# Make Docker start automatically when the system boots:
+sudo systemctl enable docker
+
 # Encode env for Kestra secret:
-while IFS='=' read -r key value; do
-    echo "SECRET_$key=$(echo -n "$value" | base64)";
-done < .env > .env_encoded
+sudo bash encode_env.sh
 
 # Launch Kestra:
-docker compose up -d
+sudo docker compose up -d
