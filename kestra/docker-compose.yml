@@ -66,6 +66,8 @@ services:
       - "8081:8081"
     anonymousUsageReport:
       enabled: false
+    tutorialFlows:
+      enabled: false
     depends_on:
       postgres:
         condition: service_started
