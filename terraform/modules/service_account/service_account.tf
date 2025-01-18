@@ -12,7 +12,8 @@ resource "google_project_iam_member" "project" {
     "roles/compute.serviceAgent",
     "roles/compute.instanceAdmin.v1",
     "roles/bigquery.user",
-    "roles/bigquery.dataEditor"
+    "roles/bigquery.dataEditor",
+    "roles/bigquery.connectionAdmin"
   ])
 
   project = var.project_id
