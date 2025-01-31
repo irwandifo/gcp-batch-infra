@@ -12,7 +12,7 @@ Building the infrastructure for the data platform.
 | Processing             | DuckDB and BigQuery                     | Performs data transformation.             |
 | Orchestration          | Kestra                                  | Coordinates workflows and tasks.          |
 | Data Quality           | Soda and dbt test                       | Ensures data accuracy and reliability.    |
-| Alerting               | Sentry                                  | Sends notifications for issues.           |
+| Alerting               | Resend                                  | Sends email notifications for issues.     |
 | Monitoring             | Grafana                                 | Displays metrics and system status.       |
 | Infrastructure-as-code | Terraform                               | Automates infrastructure management.      |
 | Consumption            | BigQuery                                | Data consumption layer.                   |
