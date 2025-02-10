@@ -16,3 +16,7 @@ Building the infrastructure for the data platform.
 | Infrastructure-as-code | Terraform                               | Automates infrastructure management.      |
 | Consumption            | BigQuery                                | Data consumption layer.                   |
 | Analytics              | Looker Studio and Evidence              | Analytics and visualizations layer.       |
+
+## Data Flow
+
+![](images/gcp-batch-diagram.png)
