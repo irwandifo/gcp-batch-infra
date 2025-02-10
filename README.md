@@ -19,4 +19,4 @@ Building the infrastructure for the data platform.
 
 ## Data Flow
 
-![](img/github-header.png)
+![](img/gcp-batch-diagram.png)
