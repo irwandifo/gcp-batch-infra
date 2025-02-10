@@ -19,4 +19,4 @@ Building the infrastructure for the data platform.
 
 ## Data Flow
 
-<img src="images/gcp-batch-diagram.png" width=80% height=80%>
+<img src="images/gcp-batch-diagram.png" width=90% height=90%>
