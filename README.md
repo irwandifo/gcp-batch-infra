@@ -13,7 +13,6 @@ Building the infrastructure for the data platform.
 | Orchestration          | Kestra                                  | Coordinates workflows and tasks.          |
 | Data Quality           | Soda and dbt test                       | Ensures data accuracy and reliability.    |
 | Alerting               | Resend                                  | Sends email notifications for issues.     |
-| Monitoring             | Grafana                                 | Displays metrics and system status.       |
 | Infrastructure-as-code | Terraform                               | Automates infrastructure management.      |
 | Consumption            | BigQuery                                | Data consumption layer.                   |
 | Analytics              | Looker Studio and Evidence              | Analytics and visualizations layer.       |
