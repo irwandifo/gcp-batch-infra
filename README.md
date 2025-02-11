@@ -1,8 +1,9 @@
 # GCP Infrastructure for Batch Processing
 
-Building the infrastructure for the data platform.
+This project sets up a lightweight and cost-effective batch processing infrastructure for data platform on GCP. It is designed for small-to-medium-scale data processing tasks, leveraging GCP services like Cloud SQL, VPC, Compute Engine, Cloud Storage, and BigQuery.
+---
 
-## Key Components
+## Components
 
 | **Category**           | **Tool/Technology**                     | **Details**                               |
 |------------------------|-----------------------------------------|-------------------------------------------|
@@ -17,6 +18,6 @@ Building the infrastructure for the data platform.
 | Consumption            | BigQuery                                | Data consumption layer.                   |
 | Analytics              | Looker Studio and Evidence              | Analytics and visualizations layer.       |
 
-## Data Flow
+## Architecture Overview
 
 ![](img/gcp-batch-diagram.png)
