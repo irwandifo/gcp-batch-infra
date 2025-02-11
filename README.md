@@ -9,7 +9,7 @@ This project sets up a lightweight and cost-effective batch processing infrastru
 | Infrastructure-as-code | Terraform       | Automates infrastructure management.            |
 | Database               | Cloud SQL       | Simulates PostgreSQL OLTP database.             |
 | Networking             | VPC             | Secure Cloud SQL to Compute Engine Networking.  |
-| Processing             | Compute Engine  | Deploy kestra to process workflows and tasks.   |
+| Processing             | Compute Engine  | Deploy kestra to process workflows.             |
 | Storage                | Cloud Storage   | Stores data in bronze and silver layer.         |
 | Consumption            | BigQuery        | Stores data in gold/consumption layer.          |
 
