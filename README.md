@@ -17,6 +17,6 @@ This project sets up a lightweight and cost-effective batch processing infrastru
 | Consumption            | BigQuery                                | Data consumption layer.                   |
 | Analytics              | Looker Studio and Evidence              | Analytics and visualizations layer.       |
 
-## Architecture Overview
+## Architecture Diagram
 
 ![](img/gcp-batch-diagram.png)
