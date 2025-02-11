@@ -4,18 +4,14 @@ This project sets up a lightweight and cost-effective batch processing infrastru
 
 ## Components
 
-| **Category**           | **Tool/Technology**                     | **Details**                               |
-|------------------------|-----------------------------------------|-------------------------------------------|
-| Infrastructure-as-code | Terraform                               | Automates infrastructure management.      |
-| Data Source            | Pagila                                  | Sample PostgreSQL database.               |
-| Orchestration          | Kestra                                  | Coordinates workflows and tasks.          |
-| Ingestion              | Kestra                                  | Manages data ingestion workflows.         |
-| Storage                | Google Cloud Storage (GCS) and BigQuery | Stores data using Medallion Architecture. |
-| Processing             | DuckDB and dbt+BigQuery                 | Performs data transformation.             |
-| Data Quality           | Soda and dbt test                       | Ensures data accuracy and reliability.    |
-| Alerting               | Resend                                  | Sends email notifications for issues.     |
-| Consumption            | BigQuery                                | Data consumption layer.                   |
-| Analytics              | Looker Studio and Evidence              | Analytics and visualizations layer.       |
+| **Categories**         | **Tools**       | **Details**                                     |
+|------------------------|-----------------|-------------------------------------------------|
+| Infrastructure-as-code | Terraform       | Automates infrastructure management.            |
+| Data Source            | Cloud SQL       | Simulates PostgreSQL OLTP database.             |
+| Networking             | VPC             | Secure Cloud SQL to Compute Engine Networking.  |
+| Processing             | Compute Engine  | Process kestra workflows and tasks.             |
+| Storage                | Cloud Storage   | Stores data in bronze and silver layer.         |
+| Consumption            | BigQuery        | Stores data in gold/consumption layer.          |
 
 ## Architecture Diagram
 
